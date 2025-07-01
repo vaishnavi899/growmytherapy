@@ -25,7 +25,7 @@ export default function AboutPage() {
             Meet Dr. Serena Blake
           </h2>
           <p className="text-[18px] md:text-[19px] leading-9 mb-6">
-            Finding time and opportunities to care for ourselves can be incredibly challenging in today's busy and demanding world.
+            Finding time and opportunities to care for ourselves can be incredibly challenging in today&apos;s busy and demanding world.
             I believe therapy offers a dedicated space for self-care, providing the support and tools needed to improve this essential practice.
             Therapy can help individuals identify and clarify their goals, values, and the various elements that contribute to their well-being,
             recognizing that these aspects vary from person to person.
@@ -57,6 +57,7 @@ export default function AboutPage() {
           </div>
         </motion.div>
       </div>
+
       <div className="w-[92%] h-[1px] bg-[#7E7E6B] mx-auto my-16 opacity-60" />
 
       <section className="bg-[#f9f6ef] px-6 py-20 text-center">
@@ -66,7 +67,7 @@ export default function AboutPage() {
         </h3>
         <p className="text-[#4a4a4a] text-[17px] leading-8 max-w-3xl mx-auto">
           You may be led to therapy by anxiety, depression, relationship stress, past or recent trauma, grief and loss, self-esteem issues,
-          or challenges with family, parenting, or parental relationships. Whatever the source of your stress, you don’t have to face it alone.
+          or challenges with family, parenting, or parental relationships. Whatever the source of your stress, you don&apos;t have to face it alone.
           Therapy offers you the time and space to work toward wellness and peace.
         </p>
         <div className="w-[92%] h-[1px] bg-[#7E7E6B] mx-auto my-12 opacity-60" />
