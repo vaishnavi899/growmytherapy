@@ -1,6 +1,6 @@
-# 🌿 Grow My Therapy
+# Assignment- Grow My Therapy
 
-Grow My Therapy is a modern, responsive website built for a psychological services provider. It focuses on accessibility, elegant UI/UX, and clear communication of services to create a calming and trustworthy digital presence for clients.
+Grow MyTherapy is a compassionate mental wellness platform dedicated to helping individuals navigate anxiety, stress, trauma, and relationship challenges through expert psychological care. Led by Dr. Serena Blake, PsyD, the platform offers personalized therapy sessions—both in-person and virtual—designed to support healing, self-awareness, and lasting emotional growth.
 
 ## 🧠 Live Demo
 
@@ -10,34 +10,32 @@ Grow My Therapy is a modern, responsive website built for a psychological servic
 
 ## 📌 Features
 
-- ✅ Fully responsive across all screen sizes
-- ✅ Smooth scroll navigation with active section linking
-- ✅ Clean, calming aesthetic with custom fonts and color palette
-- ✅ Scroll-triggered animations for a dynamic user experience
-- ✅ Optimized image loading and semantic HTML
-- ✅ Mobile navigation with hamburger menu support
-- ✅ Modular component structure for easy scalability
-- ✅ SEO-friendly structure
+- Fully responsive across all screen sizes
 
----
+-Smooth scroll navigation with active section linking
+
+-Clean, calming aesthetic with custom fonts and color palette
+
+-Scroll-triggered animations for a dynamic user experience
+
+-Optimized image loading and semantic HTML
+
+-Modular component structure for easy scalability
+
 
 ## 🛠️ Tech Stack
 
-- **Framework**: [Next.js 14](https://nextjs.org)
-- **Styling**: [Tailwind CSS](https://tailwindcss.com)
-- **Animation**: [Framer Motion](https://www.framer.com/motion/)
-- **Font Families**: Poppins, Ubuntu, EB Garamond (via Google Fonts)
+- **Framework**: Next.js 14
+- **Styling**: Tailwind CSS
 - **Deployment**: [Vercel](https://vercel.com)
 
 ---
 
 ## 🧩 Sections
 
-- **Hero**: Calming entry point with call to action
-- **Meet Dr. Blake**: Therapist introduction with image and bio
-- **Why Us**: Unique selling points and animated stat cards
-- **Services**: Overview of therapy types offered, each with image
+- **Main Page**: Calming entry point with call to action
+- **Meet Dr. Blake**: Therapist introduction 
+- **Services**: Overview of therapy types offered
 - **FAQ**: Accordion-style frequently asked questions
-- **Testimonials**: Client feedback carousel
 - **Contact**: Form and contact info with address
   
