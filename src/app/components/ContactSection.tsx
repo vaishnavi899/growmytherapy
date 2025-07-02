@@ -1,6 +1,14 @@
 'use client';
 import { useState } from 'react';
-import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaClock, FaUser, FaComment, FaCalendarAlt } from 'react-icons/fa';
+import {
+  FaPhone,
+  FaEnvelope,
+  FaMapMarkerAlt,
+  FaClock,
+  FaUser,
+  FaComment,
+  FaCalendarAlt,
+} from 'react-icons/fa';
 
 export default function ContactSection() {
   const [form, setForm] = useState({
@@ -22,7 +30,7 @@ export default function ContactSection() {
     if (!form.phone.trim()) newErrors.phone = 'Phone is required';
     if (!form.email.trim()) newErrors.email = 'Email is required';
     else if (!/^\S+@\S+\.\S+$/.test(form.email)) newErrors.email = 'Please enter a valid email';
-    if (!form.message.trim()) newErrors.message = 'Please share why you&#39;re reaching out';
+    if (!form.message.trim()) newErrors.message = `Please share why you're reaching out`;
     if (!form.preferredTime.trim()) newErrors.preferredTime = 'Preferred contact time is required';
     if (!form.consent) newErrors.consent = 'You must agree to be contacted';
     setErrors(newErrors);
@@ -51,7 +59,7 @@ export default function ContactSection() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!validate()) return;
-    
+
     setIsSubmitting(true);
     try {
       await new Promise(resolve => setTimeout(resolve, 1000));
@@ -75,6 +83,7 @@ export default function ContactSection() {
   return (
     <section className="bg-[#f9f6f1] py-16 px-4 md:px-6">
       <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-10 items-start">
+        {/* Left: Profile Info */}
         <div className="bg-white rounded-2xl shadow-md p-6 md:p-8 border border-[#ddd]">
           <div className="flex flex-col items-center mb-8">
             <div className="w-32 h-32 rounded-full bg-[#f0ede5] mb-4 overflow-hidden">
@@ -93,7 +102,10 @@ export default function ContactSection() {
               <h4 className="text-lg font-semibold flex items-center gap-2">
                 <FaMapMarkerAlt className="text-[#7E7E6B]" /> Location
               </h4>
-              <p className="pl-8">1287 Maplewood Drive<br />Los Angeles, CA 90026</p>
+              <p className="pl-8">
+                1287 Maplewood Drive<br />
+                Los Angeles, CA 90026
+              </p>
               <button className="mt-2 text-sm text-[#4a4a38] underline hover:text-[#072c27] pl-8">
                 View on map
               </button>
@@ -105,10 +117,14 @@ export default function ContactSection() {
               </h4>
               <div className="pl-8 space-y-1">
                 <p>
-                  <a href="tel:+13235550192" className="hover:underline">(323) 555-0192</a>
+                  <a href="tel:+13235550192" className="hover:underline">
+                    (323) 555-0192
+                  </a>
                 </p>
                 <p>
-                  <a href="mailto:serena@blakepsychology.com" className="hover:underline">serena@blakepsychology.com</a>
+                  <a href="mailto:serena@blakepsychology.com" className="hover:underline">
+                    serena@blakepsychology.com
+                  </a>
                 </p>
               </div>
             </div>
@@ -118,8 +134,21 @@ export default function ContactSection() {
                 <FaClock className="text-[#7E7E6B]" /> Office Hours
               </h4>
               <ul className="list-disc ml-5 pl-3 space-y-1">
-                <li><strong>In-person:</strong> Tue & Thu, 10 AM – 6 PM</li>
-                <li><strong>Virtual:</strong> Mon, Wed & Fri, 1 PM – 5 PM</li>
+                <li>
+                  <strong>In-person:</strong> Tue & Thu, 10 AM – 6 PM
+                </li>
+                <li>
+                  <strong>Virtual:</strong> Mon, Wed & Fri, 1 PM – 5 PM
+                </li>
+              </ul>
+            </div>
+
+            <div className="bg-[#f9f6f1] p-4 rounded-lg">
+              <h4 className="text-lg font-semibold">New Patient Information</h4>
+              <ul className="list-disc ml-5 space-y-1 mt-2">
+                <li>$200 / individual session</li>
+                <li>$240 / couples session</li>
+                <li>Most insurance plans accepted</li>
               </ul>
             </div>
 
@@ -137,24 +166,26 @@ export default function ContactSection() {
             <div className="pt-4 border-t border-[#ddd]">
               <h4 className="text-lg font-semibold">Emergency Resources</h4>
               <p className="text-sm mt-2">
-                If you&#39;re in crisis, please call 911 or the National Suicide Prevention Lifeline at <a href="tel:988" className="underline">988</a>.
+                If you&apos;re in crisis, please call 911 or the National Suicide Prevention Lifeline at{' '}
+                <a href="tel:988" className="underline">988</a>.
               </p>
             </div>
           </div>
         </div>
 
+        {/* Right: Contact Form */}
         <div className="bg-white rounded-2xl shadow-md p-6 md:p-8 border border-[#ddd]">
           <h2 className="text-3xl md:text-4xl font-serif text-[#4a4a38] text-center mb-8">
             Contact Dr. Blake
           </h2>
-          
+
           {submitted ? (
             <div className="text-center py-10">
               <div className="text-green-700 text-xl font-medium mb-4">
                 Thank you for reaching out!
               </div>
               <p className="text-[#4a4a38] mb-6">
-                Your message has been received. Dr. Blake or her team will contact you within 24-48 hours.
+                Your message has been received. Dr. Blake or her team will contact you within 24–48 hours.
               </p>
               <button
                 onClick={() => setSubmitted(false)}
@@ -165,8 +196,87 @@ export default function ContactSection() {
             </div>
           ) : (
             <form onSubmit={handleSubmit} noValidate className="space-y-6 text-[#4a4a38]">
-              {/* input fields ... */}
-              {/* same as before */}
+              <div className="relative">
+                <label className="block font-medium mb-1">Name</label>
+                <div className="relative">
+                  <FaUser className="absolute left-3 top-1/2 transform -translate-y-1/2 text-[#7E7E6B]" />
+                  <input
+                    type="text"
+                    name="name"
+                    value={form.name}
+                    onChange={handleChange}
+                    className="w-full border border-[#bdbbae] p-3 pl-10 rounded bg-white focus:outline-none focus:ring-1 focus:ring-[#4a4a38]"
+                    placeholder="Your full name"
+                  />
+                </div>
+                {errors.name && <p className="text-red-600 text-sm mt-1">{errors.name}</p>}
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="relative">
+                  <label className="block font-medium mb-1">Phone</label>
+                  <div className="relative">
+                    <FaPhone className="absolute left-3 top-1/2 transform -translate-y-1/2 text-[#7E7E6B]" />
+                    <input
+                      type="tel"
+                      name="phone"
+                      value={form.phone}
+                      onChange={handleChange}
+                      className="w-full border border-[#bdbbae] p-3 pl-10 rounded bg-white focus:outline-none focus:ring-1 focus:ring-[#4a4a38]"
+                      placeholder="(123) 456-7890"
+                    />
+                  </div>
+                  {errors.phone && <p className="text-red-600 text-sm mt-1">{errors.phone}</p>}
+                </div>
+
+                <div className="relative">
+                  <label className="block font-medium mb-1">Email</label>
+                  <div className="relative">
+                    <FaEnvelope className="absolute left-3 top-1/2 transform -translate-y-1/2 text-[#7E7E6B]" />
+                    <input
+                      type="email"
+                      name="email"
+                      value={form.email}
+                      onChange={handleChange}
+                      className="w-full border border-[#bdbbae] p-3 pl-10 rounded bg-white focus:outline-none focus:ring-1 focus:ring-[#4a4a38]"
+                      placeholder="your@email.com"
+                    />
+                  </div>
+                  {errors.email && <p className="text-red-600 text-sm mt-1">{errors.email}</p>}
+                </div>
+              </div>
+
+              <div className="relative">
+                <label className="block font-medium mb-1">What brings you here?</label>
+                <div className="relative">
+                  <FaComment className="absolute left-3 top-4 text-[#7E7E6B]" />
+                  <textarea
+                    name="message"
+                    value={form.message}
+                    onChange={handleChange}
+                    rows={4}
+                    className="w-full border border-[#bdbbae] p-3 pl-10 rounded bg-white focus:outline-none focus:ring-1 focus:ring-[#4a4a38]"
+                    placeholder="Tell us about your needs..."
+                  />
+                </div>
+                {errors.message && <p className="text-red-600 text-sm mt-1">{errors.message}</p>}
+              </div>
+
+              <div className="relative">
+                <label className="block font-medium mb-1">Preferred time to reach you</label>
+                <div className="relative">
+                  <FaCalendarAlt className="absolute left-3 top-1/2 transform -translate-y-1/2 text-[#7E7E6B]" />
+                  <input
+                    type="text"
+                    name="preferredTime"
+                    value={form.preferredTime}
+                    onChange={handleChange}
+                    className="w-full border border-[#bdbbae] p-3 pl-10 rounded bg-white focus:outline-none focus:ring-1 focus:ring-[#4a4a38]"
+                    placeholder="e.g., Weekdays after 5pm"
+                  />
+                </div>
+                {errors.preferredTime && <p className="text-red-600 text-sm mt-1">{errors.preferredTime}</p>}
+              </div>
 
               <div className="flex items-start gap-3">
                 <input
@@ -178,8 +288,7 @@ export default function ContactSection() {
                   className="mt-1 h-5 w-5 rounded border-[#bdbbae] focus:ring-[#4a4a38]"
                 />
                 <label htmlFor="consent" className="text-sm">
-                  I agree to be contacted by Dr. Blake&#39;s office regarding my inquiry. 
-                  I understand my information will be kept confidential.
+                  I agree to be contacted by Dr. Blake&apos;s office regarding my inquiry. I understand my information will be kept confidential.
                 </label>
               </div>
               {errors.consent && <p className="text-red-600 text-sm mt-1">{errors.consent}</p>}
